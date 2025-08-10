@@ -3,5 +3,8 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/custom-coding-color-theme/' 
+  server: {
+    open: true,
+  },
+  base: '/custom-coding-color-theme/'
 })
