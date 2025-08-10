@@ -1,0 +1,6 @@
+@use "../settings/variables";
+
+body {
+  color: variables.$colorPrimary;
+  font-family: "Instrument Sans", sans-serif;
+}
