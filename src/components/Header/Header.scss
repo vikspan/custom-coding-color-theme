@@ -1,0 +1,25 @@
+@use "../../styles/settings/variables" as *;
+
+.main-header {
+  background-color: $colorWhite;
+  text-align: center;
+  padding: 70px 20px 42px;
+  margin: 0 auto;
+  width: 90%;
+
+  .main-header__accent {
+    color: $colorWhite;
+    text-shadow:
+      -1px -1px 0 $colorPrimary,
+      1px -1px 0 $colorPrimary,
+      -1px 1px 0 $colorPrimary,
+      1px 1px 0 $colorPrimary;
+  }
+
+  .main-header__subtitle {
+    color: $colorPrimaryLight;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-top: 30px;
+  }
+}
