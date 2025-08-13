@@ -1,0 +1,74 @@
+@use "../../../styles/settings/variables" as *;
+
+.btn {
+  font-family: inherit;
+  letter-spacing: 0.5px;
+  border: 1px solid $colorPrimary;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn--primary {
+  color: $colorBlack;
+  background-color: $colorWhite;
+
+  &:hover {
+    color: $colorSecondary;
+    border-color: $colorSecondary;
+    transform: scale(1.008);
+  }
+
+  &:active {
+    transform: scale(0.99);
+    background-color: $colorSecondaryLight;
+  }
+}
+
+.btn--secondary {
+  color: $colorWhite;
+  background-color: $colorPrimaryDark;
+  font-weight: 500;
+
+  &:hover {
+    color: $colorPrimaryDark;
+    background-color: $colorWhite;
+  }
+
+  &:active {
+    color: $colorPrimaryLighter;
+    border-color: $colorPrimaryLighter;
+  }
+}
+
+.btn--danger {
+  background-color: $colorWhite;
+  color: $colorDanger;
+  border-color: $colorDanger;
+
+  &:hover {
+    color: $colorWhite;
+    background-color: $colorDanger;
+  }
+
+  &:active {
+    background-color: $colorDangerDark;
+  }
+}
+
+.btn--sm {
+  font-size: 14px;
+  font-weight: 400;
+  padding: 5.5px 11px;
+}
+
+.btn--md {
+  font-size: 15px;
+  padding: 12px 17.5px;
+}
+
+.btn--lg {
+  font-size: 24px;
+  padding: 14.4px 28.8px;
+}
