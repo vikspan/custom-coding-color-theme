@@ -2,25 +2,22 @@ import React, { useState } from "react";
 import "./CodeBlock.scss";
 import Button from "../common/Button/Button";
 
-const CodeBlock = ({ colors, hasButton }) => {
-  const { typeSel, classSel, property, value } = colors;
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+const CodeBlock = ({ hasToggle = false, data, isDarkTheme = false, handleDark }) => {
 
-  const toggleButton = (
-    <Button
-      className="code-block__btn"
-      onClick={() => setIsDarkTheme(prev => !prev)}
-      variant="secondary"
-      size="sm"
-    >
-      {isDarkTheme ? "Light" : "Dark"}
-    </Button>
+  const colors = Object.fromEntries(
+    data.map(({ construct, color }) => [construct, color])
   );
+
+  const { typeSel, classSel, property, value } = colors;
 
   return (
     <div className={"code-block" + (isDarkTheme ? " code-block--dark" : "")}>
       <small className="code-block__label">Lang: CSS</small>
-      {hasButton && toggleButton}
+      {hasToggle && (
+        <Button className="code-block__toggle" onClick={handleDark} size="sm" >
+          {isDarkTheme ? "Light" : "Dark"}
+        </Button>
+      )}
       <code className="code-block__code">
         <span style={{ color: typeSel }}>header</span> &#123; <br />
         &nbsp; <span style={{ color: property }}>display</span>: <span style={{ color: value }}>flex</span>; <br />
