@@ -1,0 +1,41 @@
+@use "../../../../styles/settings/variables" as *;
+
+.color-picker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 18px;
+  background-color: $colorWhite;
+  padding: 15px;
+  border-top: 1px solid $colorGrey;
+
+  &__label {
+    font-weight: 600;
+    padding-right: 15px;
+    cursor: pointer;
+  }
+
+  &__value {
+    font-family: $fontSecondary;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+
+  &__swatch {
+    width: 17px;
+    height: 16px;
+    cursor: pointer;
+  }
+
+  &__input {
+    position: absolute;
+    top: 26.5px;
+    right: 275px;
+    border: none;
+    padding: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+}
