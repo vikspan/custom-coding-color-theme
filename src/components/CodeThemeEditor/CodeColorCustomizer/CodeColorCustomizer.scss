@@ -1,0 +1,19 @@
+.color-customizer {
+  width: 33%;
+  text-align: right;
+
+  &__title {
+    margin-top: 5px;
+  }
+
+  &__list {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .color-picker:first-child {
+      border-top: transparent;
+    }
+  }
+}
