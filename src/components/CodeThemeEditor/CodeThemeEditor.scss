@@ -1,0 +1,14 @@
+.theme-editor {
+  &__title {
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  &__workspace {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 40px;
+    margin-top: 45px;
+  }
+}
