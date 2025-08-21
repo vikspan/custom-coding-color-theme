@@ -1,0 +1,16 @@
+.saved-themes {
+  padding: 0 15px;
+
+  &__title {
+    margin-top: 85px;
+    text-align: center;
+  }
+
+  &__list {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}

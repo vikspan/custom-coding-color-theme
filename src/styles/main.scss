@@ -1,0 +1,18 @@
+@use 'base/reset';
+@use 'settings/variables';
+@use 'settings/mixins';
+@use 'base/typography';
+
+body {
+  background-color: variables.$colorWhite;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><circle cx='25' cy='25' r='1.5' fill='%23333'/></svg>");
+  background-repeat: repeat;
+  background-size: 35px 35px;
+}
+
+main.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding-bottom: 120px;
+}

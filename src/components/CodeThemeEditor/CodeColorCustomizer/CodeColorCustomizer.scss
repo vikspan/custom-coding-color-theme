@@ -1,0 +1,34 @@
+@use "../../../styles/settings/mixins" as *;
+
+.color-customizer {
+  width: 33%;
+  text-align: right;
+
+  @include tablet {
+    width: 38%;
+  }
+
+  @include mobile {
+    width: 90%;
+    text-align: center;
+  }
+
+  &__title {
+    margin-top: 5px;
+  }
+
+  &__list {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @include mobile {
+      align-items: center;
+    }
+
+    .color-picker:first-child {
+      border-top: transparent;
+    }
+  }
+}

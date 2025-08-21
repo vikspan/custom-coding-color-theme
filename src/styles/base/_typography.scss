@@ -1,0 +1,40 @@
+@use "../settings/variables";
+@use "../settings/mixins" as *;
+
+body {
+  color: variables.$colorPrimary;
+  font-family: "Instrument Sans", sans-serif;
+}
+
+h1 {
+  font-size: 70px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: uppercase;
+  word-spacing: 8px;
+  line-height: 1.4;
+}
+
+@include mobile {
+  h1 {
+    font-size: 45px;
+  }
+
+  h2 {
+    font-size: 35px;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+}

@@ -1,0 +1,38 @@
+@use "../../styles/settings/mixins" as *;
+
+.theme-editor {
+  &__title {
+    margin-top: 15px;
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  &__workspace {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 40px;
+    margin-top: 45px;
+
+    @include tablet {
+      flex-wrap: wrap;
+
+      .code-block {
+        order: 1;
+      }
+    }
+
+    @include mobile {
+      margin-top: 25px;
+
+      .code-block {
+        order: 0;
+        min-width: 50px;
+
+        .code-block__code {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
