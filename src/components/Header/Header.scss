@@ -1,13 +1,18 @@
 @use "../../styles/settings/variables" as *;
+@use "../../styles/settings/mixins" as *;
 
 .main-header {
   background-color: $colorWhite;
   text-align: center;
-  padding: 59px 0 64px;
+  padding: 59px 15px 64px;
   margin: 0 auto;
   width: 100%;
 
-  .main-header__accent {
+  @include mobile {
+    padding: 30px 15px;
+  }
+
+  &__accent {
     color: $colorWhite;
     text-shadow:
       -1px -1px 0 $colorPrimary,
@@ -16,10 +21,14 @@
       1px 1px 0 $colorPrimary;
   }
 
-  .main-header__subtitle {
+  &__subtitle {
     color: $colorPrimaryLight;
     font-size: 16px;
     line-height: 1.7;
     margin-top: 30px;
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
 }
