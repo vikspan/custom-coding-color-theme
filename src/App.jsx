@@ -17,6 +17,7 @@ function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [themes, setThemes] = useState([]);
   const editorRef = useRef(null);
+  const lastThemeRef = useRef(null);
 
   const saveTheme = (data, isDarkTheme) => {
     const theme = {
@@ -24,6 +25,9 @@ function App() {
       isDarkTheme: isDarkTheme
     };
     setThemes(prev => [...prev, theme]);
+    setTimeout(() => {
+      lastThemeRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, 0);
   }
 
   const handleDelete = (i) => {
@@ -48,6 +52,7 @@ function App() {
         saveTheme={saveTheme}
       />
       <SavedThemes
+        lastThemeRef={lastThemeRef}
         themes={themes}
         handleDelete={handleDelete}
         handleEdit={handleEdit}
