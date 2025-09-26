@@ -1,19 +1,10 @@
-import React, { useState } from "react";
+import React, { forwardRef } from "react";
 import "./CodeThemeEditor.scss";
 import CodeBlock from "../CodeBlock/CodeBlock";
 import CodeColorRandomizer from "./CodeColorRandomizer/CodeColorRandomizer";
 import CodeColorCustomizer from "./CodeColorCustomizer/CodeColorCustomizer";
 
-const CodeThemeEditor = ({ saveTheme }) => {
-
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
-
-  const [data, setData] = useState([
-    { construct: "typeSel", title: "Type Selector", color: "#da00b6" },
-    { construct: "classSel", title: "Class Selector", color: "#54d101" },
-    { construct: "property", title: "Property", color: "#005CC5" },
-    { construct: "value", title: "Value", color: "#ec3f79" }
-  ]);
+const CodeThemeEditor = forwardRef(({ saveTheme, data, setData, isDarkTheme, setIsDarkTheme }, ref) => {
 
   const handleColor = (construct, color) => {
     setData(prevData =>
@@ -36,7 +27,7 @@ const CodeThemeEditor = ({ saveTheme }) => {
   }
 
   return (
-    <section className="theme-editor">
+    <section className="theme-editor" ref={ref}>
       <h2 className="theme-editor__title">Create a New Color Theme</h2>
       <div className="theme-editor__workspace">
         <CodeColorCustomizer data={data} handleColor={handleColor} />
@@ -45,6 +36,6 @@ const CodeThemeEditor = ({ saveTheme }) => {
       </div>
     </section>
   )
-}
+});
 
 export default CodeThemeEditor;

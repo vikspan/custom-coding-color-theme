@@ -1,8 +1,10 @@
 @use "../../styles/settings/mixins" as *;
 
 .theme-editor {
+  padding-top: 15px;
+  scroll-margin-top: 25px;
+
   &__title {
-    margin-top: 15px;
     text-align: center;
     padding: 0 15px;
   }

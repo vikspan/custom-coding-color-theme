@@ -2,7 +2,7 @@ import React from "react";
 import "./SavedThemes.scss";
 import SavedTheme from "./SavedTheme/SavedTheme";
 
-const SavedThemes = ({ themes, handleDelete }) => {
+const SavedThemes = ({ themes, handleDelete, handleEdit }) => {
 
   return (
     <section className="saved-themes">
@@ -17,6 +17,7 @@ const SavedThemes = ({ themes, handleDelete }) => {
               data={theme.data}
               isDarkTheme={theme.isDarkTheme}
               handleDelete={handleDelete}
+              handleEdit={handleEdit}
               index={i}
             />
           ))
