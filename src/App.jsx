@@ -12,7 +12,9 @@ function App() {
     { construct: "property", title: "Property", color: "#005CC5" },
     { construct: "value", title: "Value", color: "#ec3f79" }
   ];
+  const languageOptions = ["CSS", "HTML"];
 
+  const [language, setLanguage] = useState(languageOptions[0]);
   const [data, setData] = useState(defaultData);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [themes, setThemes] = useState([]);
@@ -49,6 +51,9 @@ function App() {
         setData={setData}
         isDarkTheme={isDarkTheme}
         setIsDarkTheme={setIsDarkTheme}
+        languageOptions={languageOptions}
+        language={language}
+        setLanguage={setLanguage}
         saveTheme={saveTheme}
       />
       <SavedThemes

@@ -1,0 +1,13 @@
+@use "../../../styles/settings/variables" as *;
+
+.language-select {
+  margin-top: 25px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  &__label {
+    background-color: $colorWhite;
+    padding: 5px;
+  }
+}
