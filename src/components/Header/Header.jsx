@@ -8,7 +8,7 @@ const Header = () => {
         Custom Coding <span className="main-header__accent">Color</span> Theme
       </h1>
       <p className="main-header__subtitle">
-        Try out different colorings for CSS selectors, properties, and values, <br />
+        Play with different syntax color schemes for CSS and HTML, <br />
         and see how your code looks like in real time!
       </p>
     </header>
