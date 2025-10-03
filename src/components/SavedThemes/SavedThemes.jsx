@@ -21,6 +21,7 @@ const SavedThemes = ({ themes, handleDelete, handleEdit, lastThemeRef }) => {
               handleDelete={handleDelete}
               handleEdit={handleEdit}
               index={i}
+              language={theme.lang}
             />
           );
         })}

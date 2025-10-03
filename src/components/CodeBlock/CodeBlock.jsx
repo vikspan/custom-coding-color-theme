@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./CodeBlock.scss";
 import Button from "../common/Button/Button";
 
-const CodeBlock = ({ hasToggle = false, data, isDarkTheme = false, handleDark }) => {
+const CodeBlock = ({ hasToggle = false, data, isDarkTheme = false, handleDark, language }) => {
 
   const colors = Object.fromEntries(
     data.map(({ construct, color }) => [construct, color])
@@ -12,7 +12,7 @@ const CodeBlock = ({ hasToggle = false, data, isDarkTheme = false, handleDark })
 
   return (
     <div className={"code-block" + (isDarkTheme ? " code-block--dark" : "")}>
-      <small className="code-block__label">Lang: CSS</small>
+      <small className="code-block__label">Lang: {language}</small>
       {hasToggle && (
         <Button className="code-block__toggle" onClick={handleDark} size="sm" >
           {isDarkTheme ? "Light" : "Dark"}

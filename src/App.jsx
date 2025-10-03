@@ -6,25 +6,38 @@ import './styles/main.scss';
 
 function App() {
 
-  const defaultData = [
+  const defaultCSSData = [
     { construct: "typeSel", title: "Type Selector", color: "#da00b6" },
     { construct: "classSel", title: "Class Selector", color: "#54d101" },
     { construct: "property", title: "Property", color: "#005CC5" },
     { construct: "value", title: "Value", color: "#ec3f79" }
   ];
+  const defaultHTMLData = [
+    { construct: "htmlTag", title: "HTML Tag", color: "#615ff3" },
+    { construct: "attName", title: "Name of Attribute", color: "#cbc114" },
+    { construct: "attValue", title: "Value of Attribute", color: "#04c4d2" }
+  ];
   const languageOptions = ["CSS", "HTML"];
-
-  const [language, setLanguage] = useState(languageOptions[0]);
-  const [data, setData] = useState(defaultData);
+  const [language, setLanguage] = useState("CSS");
+  const [data, setData] = useState(defaultCSSData);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [themes, setThemes] = useState([]);
   const editorRef = useRef(null);
   const lastThemeRef = useRef(null);
 
-  const saveTheme = (data, isDarkTheme) => {
+  const handleLangSelect = (lang) => {
+    if (lang === "CSS") {
+      setData(defaultCSSData);
+    } else if (lang === "HTML") {
+      setData(defaultHTMLData);
+    }
+  }
+
+  const saveTheme = (data, isDarkTheme, lang) => {
     const theme = {
       data: data,
-      isDarkTheme: isDarkTheme
+      isDarkTheme: isDarkTheme,
+      lang: lang,
     };
     setThemes(prev => [...prev, theme]);
     setTimeout(() => {
@@ -36,7 +49,8 @@ function App() {
     setThemes(themes.filter((_, index) => index !== i));
   }
 
-  const handleEdit = (savedThemeData, isDark) => {
+  const handleEdit = (savedThemeData, isDark, lang) => {
+    setLanguage(lang);
     setData(savedThemeData);
     setIsDarkTheme(isDark);
     editorRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -54,6 +68,7 @@ function App() {
         languageOptions={languageOptions}
         language={language}
         setLanguage={setLanguage}
+        handleLangSelect={handleLangSelect}
         saveTheme={saveTheme}
       />
       <SavedThemes

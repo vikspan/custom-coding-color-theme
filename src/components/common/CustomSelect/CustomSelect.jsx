@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./CustomSelect.scss";
 
-const CustomSelect = ({ options, selected, setSelected }) => {
+const CustomSelect = ({ options, selected, setSelected, onChange }) => {
 
   const [isOpen, setIsOpen] = useState(false);
   const selectRef = useRef(null);
@@ -28,9 +28,11 @@ const CustomSelect = ({ options, selected, setSelected }) => {
       if (e.key === "ArrowDown") {
         e.preventDefault();
         setSelected(options[(currentIndex + 1) % options.length]);
+        onChange?.(options[(currentIndex + 1) % options.length]);
       } else if (e.key === "ArrowUp") {
         e.preventDefault();
         setSelected(options[(currentIndex - 1 + options.length) % options.length]);
+        onChange?.(options[(currentIndex - 1 + options.length) % options.length]);
       } else if (e.key === "Enter" || e.key === " " || e.key === "Escape") {
         e.preventDefault();
         setIsOpen(false);
@@ -61,7 +63,7 @@ const CustomSelect = ({ options, selected, setSelected }) => {
               role="option"
               aria-selected={opt === selected}
               className="custom-select__item"
-              onClick={() => { setSelected(opt); setIsOpen(false); }}
+              onClick={() => { setSelected(opt); setIsOpen(false); onChange?.(opt); }}
             >
               {opt} {opt === selected && (
                 <span className="custom-select__check">✔</span>

@@ -8,7 +8,7 @@ import LanguageSelect from "./LanguageSelect/LanguageSelect";
 const CodeThemeEditor = forwardRef(
   ({ saveTheme, data, setData,
     isDarkTheme, setIsDarkTheme,
-    languageOptions, language, setLanguage }, ref) => {
+    languageOptions, language, setLanguage, handleLangSelect }, ref) => {
 
     const handleColor = (construct, color) => {
       setData(prevData =>
@@ -27,16 +27,27 @@ const CodeThemeEditor = forwardRef(
 
     const handleSave = () => {
       const clonedData = structuredClone(data); // deep copy
-      saveTheme(clonedData, isDarkTheme);
+      saveTheme(clonedData, isDarkTheme, language);
     }
 
     return (
       <section className="theme-editor" ref={ref}>
         <h2 className="theme-editor__title">Create a New Color Theme</h2>
-        <LanguageSelect languageOptions={languageOptions} language={language} setLanguage={setLanguage} />
+        <LanguageSelect 
+          languageOptions={languageOptions}  
+          language={language} 
+          setLanguage={setLanguage}
+          handleLangSelect={handleLangSelect}
+        />
         <div className="theme-editor__workspace">
           <CodeColorCustomizer data={data} handleColor={handleColor} />
-          <CodeBlock data={data} hasToggle="true" isDarkTheme={isDarkTheme} handleDark={handleDark} />
+          <CodeBlock 
+            data={data} 
+            hasToggle="true" 
+            isDarkTheme={isDarkTheme} 
+            handleDark={handleDark} 
+            language={language} 
+          />
           <CodeColorRandomizer data={data} handleRandom={handleRandom} handleSave={handleSave} />
         </div>
       </section>

@@ -3,7 +3,7 @@ import Button from "../../common/Button/Button";
 import CodeBlock from "../../CodeBlock/CodeBlock";
 import "./SavedTheme.scss";
 
-const SavedTheme = forwardRef(({ index, data, isDarkTheme, handleDelete, handleEdit }, ref) => {
+const SavedTheme = forwardRef(({ index, data, isDarkTheme, handleDelete, handleEdit, language }, ref) => {
 
   return (
     <div ref={ref} className="saved-theme">
@@ -12,7 +12,7 @@ const SavedTheme = forwardRef(({ index, data, isDarkTheme, handleDelete, handleE
         <div className="saved-theme__actions">
           <Button
             className="saved-theme__edit-btn"
-            onClick={() => handleEdit(data, isDarkTheme)}
+            onClick={() => handleEdit(data, isDarkTheme, language)}
             variant="terciary"
             size="sm"
           >Edit</Button>
@@ -24,7 +24,7 @@ const SavedTheme = forwardRef(({ index, data, isDarkTheme, handleDelete, handleE
           >X</Button>
         </div>
       </div>
-      <CodeBlock data={data} isDarkTheme={isDarkTheme} />
+      <CodeBlock data={data} isDarkTheme={isDarkTheme} language={language} />
     </div>
   )
 });
