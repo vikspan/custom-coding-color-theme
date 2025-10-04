@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import CodeThemeEditor from './components/CodeThemeEditor/CodeThemeEditor';
 import Header from './components/Header/Header';
 import SavedThemes from './components/SavedThemes/SavedThemes';
@@ -21,9 +21,24 @@ function App() {
   const [language, setLanguage] = useState("CSS");
   const [data, setData] = useState(defaultCSSData);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
-  const [themes, setThemes] = useState([]);
+  const [themes, setThemes] = useState(() => {
+    const saved = localStorage.getItem("savedThemes");
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch (e) {
+        console.error("Error parsing saved themes:", e);
+      }
+    }
+    return [];
+  });
+
   const editorRef = useRef(null);
   const lastThemeRef = useRef(null);
+
+  useEffect(() => {
+    localStorage.setItem("savedThemes", JSON.stringify(themes));
+  }, [themes]);
 
   const handleLangSelect = (lang) => {
     if (lang === "CSS") {
