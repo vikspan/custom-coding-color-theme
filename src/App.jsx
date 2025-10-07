@@ -6,20 +6,20 @@ import './styles/main.scss';
 
 function App() {
 
-  const defaultCSSData = [
+  const defaultCSSColorScheme = [
     { construct: "typeSel", title: "Type Selector", color: "#da00b6" },
     { construct: "classSel", title: "Class Selector", color: "#54d101" },
     { construct: "property", title: "Property", color: "#005CC5" },
     { construct: "value", title: "Value", color: "#ec3f79" }
   ];
-  const defaultHTMLData = [
+  const defaultHTMLColorScheme = [
     { construct: "htmlTag", title: "HTML Tag", color: "#615ff3" },
     { construct: "attName", title: "Name of Attribute", color: "#cbc114" },
     { construct: "attValue", title: "Value of Attribute", color: "#04c4d2" }
   ];
   const languageOptions = ["CSS", "HTML"];
   const [language, setLanguage] = useState("CSS");
-  const [data, setData] = useState(defaultCSSData);
+  const [colorScheme, setColorScheme] = useState(defaultCSSColorScheme);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [themes, setThemes] = useState(() => {
     const saved = localStorage.getItem("savedThemes");
@@ -42,15 +42,15 @@ function App() {
 
   const handleLangSelect = (lang) => {
     if (lang === "CSS") {
-      setData(defaultCSSData);
+      setColorScheme(defaultCSSColorScheme);
     } else if (lang === "HTML") {
-      setData(defaultHTMLData);
+      setColorScheme(defaultHTMLColorScheme);
     }
   }
 
-  const saveTheme = (data, isDarkTheme, lang) => {
+  const saveTheme = (colorScheme, isDarkTheme, lang) => {
     const theme = {
-      data: data,
+      colorScheme: colorScheme,
       isDarkTheme: isDarkTheme,
       lang: lang,
     };
@@ -64,9 +64,9 @@ function App() {
     setThemes(themes.filter((_, index) => index !== i));
   }
 
-  const handleEdit = (savedThemeData, isDark, lang) => {
+  const handleEdit = (savedThemeColorScheme, isDark, lang) => {
     setLanguage(lang);
-    setData(savedThemeData);
+    setColorScheme(savedThemeColorScheme);
     setIsDarkTheme(isDark);
     editorRef.current?.scrollIntoView({ behavior: "smooth" });
   }
@@ -76,8 +76,8 @@ function App() {
       <Header />
       <CodeThemeEditor
         ref={editorRef}
-        data={data}
-        setData={setData}
+        colorScheme={colorScheme}
+        setColorScheme={setColorScheme}
         isDarkTheme={isDarkTheme}
         setIsDarkTheme={setIsDarkTheme}
         languageOptions={languageOptions}

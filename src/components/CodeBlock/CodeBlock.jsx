@@ -4,10 +4,10 @@ import Button from "../common/Button/Button";
 import CSSCode from "./CSSCode";
 import HTMLCode from "./HTMLCode";
 
-const CodeBlock = ({ hasToggle = false, data, isDarkTheme = false, handleDark, language }) => {
+const CodeBlock = ({ hasToggle = false, colorScheme, isDarkTheme = false, handleDark, language }) => {
 
   const colors = Object.fromEntries(
-    data.map(({ construct, color }) => [construct, color])
+    colorScheme.map(({ construct, color }) => [construct, color])
   );
 
   return (

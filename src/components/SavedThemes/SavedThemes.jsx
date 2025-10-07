@@ -16,7 +16,7 @@ const SavedThemes = ({ themes, handleDelete, handleEdit, lastThemeRef }) => {
             <SavedTheme
               key={i}
               ref={isLast ? lastThemeRef : null}
-              data={theme.data}
+              colorScheme={theme.colorScheme}
               isDarkTheme={theme.isDarkTheme}
               handleDelete={handleDelete}
               handleEdit={handleEdit}

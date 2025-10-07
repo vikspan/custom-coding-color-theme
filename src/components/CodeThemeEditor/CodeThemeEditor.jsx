@@ -6,13 +6,13 @@ import CodeColorCustomizer from "./CodeColorCustomizer/CodeColorCustomizer";
 import LanguageSelect from "./LanguageSelect/LanguageSelect";
 
 const CodeThemeEditor = forwardRef(
-  ({ saveTheme, data, setData,
+  ({ saveTheme, colorScheme, setColorScheme,
     isDarkTheme, setIsDarkTheme,
     languageOptions, language, setLanguage, handleLangSelect }, ref) => {
 
     const handleColor = (construct, color) => {
-      setData(prevData =>
-        prevData.map(item => item.construct === construct ? { ...item, color: color } : item)
+      setColorScheme(prev =>
+        prev.map(item => item.construct === construct ? { ...item, color: color } : item)
       );
     }
 
@@ -26,8 +26,8 @@ const CodeThemeEditor = forwardRef(
     }
 
     const handleSave = () => {
-      const clonedData = structuredClone(data); // deep copy
-      saveTheme(clonedData, isDarkTheme, language);
+      const clonedColorScheme = structuredClone(colorScheme); // deep copy
+      saveTheme(clonedColorScheme, isDarkTheme, language);
     }
 
     return (
@@ -40,15 +40,15 @@ const CodeThemeEditor = forwardRef(
           handleLangSelect={handleLangSelect}
         />
         <div className="theme-editor__workspace">
-          <CodeColorCustomizer data={data} handleColor={handleColor} />
+          <CodeColorCustomizer colorScheme={colorScheme} handleColor={handleColor} />
           <CodeBlock 
-            data={data} 
+            colorScheme={colorScheme} 
             hasToggle="true" 
             isDarkTheme={isDarkTheme} 
             handleDark={handleDark} 
             language={language} 
           />
-          <CodeColorRandomizer data={data} handleRandom={handleRandom} handleSave={handleSave} />
+          <CodeColorRandomizer colorScheme={colorScheme} handleRandom={handleRandom} handleSave={handleSave} />
         </div>
       </section>
     )

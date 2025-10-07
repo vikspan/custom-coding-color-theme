@@ -2,14 +2,14 @@ import React from "react";
 import "./CodeColorCustomizer.scss";
 import ColorPicker from "./ColorPicker/ColorPicker";
 
-const CodeColorCustomizer = ({ handleColor, data }) => {
+const CodeColorCustomizer = ({ handleColor, colorScheme }) => {
 
   return (
     <div className="color-customizer">
       <h3 className="color-customizer__title">Custom Color Settings</h3>
       <div className="color-customizer__list">
         {
-          data.map((item) => (
+          colorScheme.map((item) => (
             <ColorPicker handleColor={handleColor} item={item} key={item.construct} />
           ))
         }
