@@ -1,9 +1,13 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useState } from "react";
 import Button from "../../common/Button/Button";
 import CodeBlock from "../../CodeBlock/CodeBlock";
 import "./SavedTheme.scss";
+import SavedThemeRulesModal from "../SavedThemeRulesModal/SavedThemeRulesModal";
 
 const SavedTheme = forwardRef(({ index, colorScheme, isDarkTheme, handleDelete, handleEdit, language }, ref) => {
+
+  const [isOpen, setIsOpen] = useState(false);
+  const handleClose = () => setIsOpen(false);
 
   return (
     <div ref={ref} className="saved-theme">
@@ -25,6 +29,12 @@ const SavedTheme = forwardRef(({ index, colorScheme, isDarkTheme, handleDelete, 
         </div>
       </div>
       <CodeBlock colorScheme={colorScheme} isDarkTheme={isDarkTheme} language={language} />
+      <Button
+        className="saved-theme__theme-rules-btn"
+        onClick={() => setIsOpen(true)}
+        variant="primary"
+      >Generate Rules for VS Code</Button>
+      {isOpen && <SavedThemeRulesModal handleClose={handleClose} colorScheme={colorScheme} language={language} />}
     </div>
   )
 });

@@ -1,0 +1,44 @@
+@use "../../../../styles/settings/variables" as *;
+@use "../../../../styles/settings/mixins" as *;
+
+.rules-block {
+  position: relative;
+  margin-top: 15px;
+
+  &__code {
+    background: $colorPrimaryDark;
+    color: $colorGreyText;
+    padding: 15px;
+    border-radius: 4px;
+    font-family: monospace;
+    white-space: pre-wrap;
+    max-height: 170px;
+    overflow-y: auto;
+  }
+
+  &__copy-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 40px;
+    font-family: inherit;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: $colorWhite;
+    background-color: $colorPrimary;
+    box-shadow: 0 0 8px 8px $colorPrimaryDark;
+    padding: 6px 10px;
+    border-radius: 3px;
+
+    &:hover {
+      background-color: $colorPrimaryLight;
+    }
+  }
+
+  &__copy-icon {
+    width: 20px;
+    height: 20px;
+    color: inherit;
+  }
+}

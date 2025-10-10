@@ -1,0 +1,104 @@
+@use "../../../styles/settings/variables" as *;
+@use "../../../styles/settings/mixins" as *;
+
+.theme-rules-modal__overlay {
+  position: fixed;
+  inset: 0;
+  background: hsla(240, 7%, 27%, 5%);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.25s ease forwards;
+  z-index: 999;
+}
+
+.theme-rules-modal {
+  background-color: $colorWhite;
+  border-top: 0.5px solid $colorPrimaryDark;
+  box-shadow: 0px 1.5px 0px 2px $colorPrimaryDark;
+  border-radius: 4px;
+  padding: 30px 40px 20px;
+  width: min(90%, 760px);
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: scaleIn 0.25s ease forwards;
+
+  &__close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  &__title {
+    font-size: 34px;
+    padding-right: 15px;
+  }
+
+  &__body {
+    display: flex;
+    margin: 15px 0 10px;
+  }
+
+  &__instructions {
+    padding-right: 25px;
+    width: 52%;
+  }
+
+  &__list {
+    font-size: 15px;
+    padding-left: 20px;
+
+    li {
+      margin-bottom: 7px;
+    }
+  }
+
+  &__preview {
+    width: 48%;
+
+    img {
+      border-radius: 4px;
+      width: 100%;
+    }
+  }
+}
+
+@include mobile {
+  .theme-rules-modal__body {
+    flex-direction: column;
+  }
+
+  .theme-rules-modal__instructions {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .theme-rules-modal__preview {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
