@@ -13,8 +13,8 @@ function App() {
     { construct: "value", title: "Value", color: "#ec3f79" }
   ];
   const defaultHTMLColorScheme = [
-    { construct: "htmlTag", title: "HTML Tag", color: "#615ff3" },
-    { construct: "attName", title: "Name of Attribute", color: "#cbc114" },
+    { construct: "htmlTag", title: "HTML Tag", color: "#da00b6" },
+    { construct: "attName", title: "Name of Attribute", color: "#005cc5" },
     { construct: "attValue", title: "Value of Attribute", color: "#04c4d2" }
   ];
   const languageOptions = ["CSS", "HTML"];

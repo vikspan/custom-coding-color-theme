@@ -6,7 +6,7 @@ const CodeColorCustomizer = ({ handleColor, colorScheme }) => {
 
   return (
     <div className="color-customizer">
-      <h3 className="color-customizer__title">Custom Color Settings</h3>
+      <h3 className="color-customizer__title">Select Custom Colors</h3>
       <div className="color-customizer__list">
         {
           colorScheme.map((item) => (

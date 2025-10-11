@@ -6,7 +6,7 @@ const CodeColorRandomizer = ({ colorScheme, handleRandom, handleSave }) => {
 
   return (
     <div className="color-randomizer">
-      <h3 className="color-randomizer__title">Random Color Generator</h3>
+      <h3 className="color-randomizer__title">Generate Random Colors</h3>
       <div className="color-randomizer__list">
         {
           colorScheme.map((item, i) => (

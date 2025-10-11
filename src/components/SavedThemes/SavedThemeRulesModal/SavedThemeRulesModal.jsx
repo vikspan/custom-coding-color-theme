@@ -53,6 +53,7 @@ const ThemeRulesModal = ({ handleClose, colorScheme, language }) => {
                   (Ctrl + Shift + P for Windows/Linux, Cmd + Shift + P for Mac).</li>
                 <li>Search for and open "Preferences: Open User Settings (JSON)".</li>
                 <li>Copy the code below and paste it at the bottom of the file as shown in the picture (don't forget to add a comma).</li>
+                <li>That's it!</li>
               </ol>
 
               <RulesBlockWithCopy colorScheme={colorScheme} language={language} />
