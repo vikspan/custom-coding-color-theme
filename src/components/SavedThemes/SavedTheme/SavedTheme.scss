@@ -1,6 +1,7 @@
 @use "../../../styles/settings/variables" as *;
 
 .saved-theme {
+  scroll-margin-top: 110px;
   width: 275px;
 
   &__header {
