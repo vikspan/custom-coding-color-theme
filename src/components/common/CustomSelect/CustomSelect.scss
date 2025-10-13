@@ -1,0 +1,57 @@
+@use "../../../styles/settings/variables" as *;
+
+.custom-select {
+  display: flex;
+  flex-direction: column;
+  min-width: 100px;
+  position: relative;
+
+  &__trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 500;
+    color: $colorPrimary;
+    background-color: $colorWhite;
+    border: 1px solid $colorPrimaryLighter;
+    border-radius: 4px;
+    padding: 5px 12px;
+  }
+
+  &__arrow {
+    font-size: 11px;
+  }
+
+  &__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    width: 100%;
+    background: $colorWhite;
+    border: 1px solid $colorPrimaryLighter;
+    border-radius: 4px;
+    list-style: none;
+    padding: 4px 0;
+    z-index: 10;
+  }
+
+  &__item {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px 12px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &:hover {
+      color: $colorSecondary;
+    }
+  }
+
+  &__check {
+    font-size: 12px;
+  }
+}

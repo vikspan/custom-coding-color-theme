@@ -42,6 +42,20 @@
   }
 }
 
+.btn--terciary {
+  color: $colorPrimaryDark;
+  background-color: $colorWhite;
+
+  &:hover {
+    color: $colorWhite;
+    background-color: $colorPrimaryDark;
+  }
+
+  &:active {
+    background-color: $colorPrimaryLight;
+  }
+}
+
 .btn--danger {
   background-color: $colorWhite;
   color: $colorDanger;

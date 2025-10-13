@@ -2,7 +2,7 @@ import React from "react";
 import "./SavedThemes.scss";
 import SavedTheme from "./SavedTheme/SavedTheme";
 
-const SavedThemes = ({ themes, handleDelete }) => {
+const SavedThemes = ({ themes, handleDelete, handleEdit, lastThemeRef }) => {
 
   return (
     <section className="saved-themes">
@@ -10,17 +10,21 @@ const SavedThemes = ({ themes, handleDelete }) => {
         <h2 className="saved-themes__title">Your Saved Themes</h2>
       )}
       <div className="saved-themes__list">
-        {
-          themes.map((theme, i) => (
+        {themes.map((theme, i) => {
+          const isLast = i === themes.length - 1;
+          return (
             <SavedTheme
               key={i}
-              data={theme.data}
+              ref={isLast ? lastThemeRef : null}
+              colorScheme={theme.colorScheme}
               isDarkTheme={theme.isDarkTheme}
               handleDelete={handleDelete}
+              handleEdit={handleEdit}
               index={i}
+              language={theme.lang}
             />
-          ))
-        }
+          );
+        })}
       </div>
     </section>
   )
