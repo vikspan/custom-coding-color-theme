@@ -33,7 +33,7 @@ const SavedTheme = forwardRef(({ index, colorScheme, isDarkTheme, handleDelete, 
         className="saved-theme__theme-rules-btn"
         onClick={() => setIsOpen(true)}
         variant="primary"
-      >Generate Rules for VS Code</Button>
+      >Export to VS Code</Button>
       {isOpen && <SavedThemeRulesModal handleClose={handleClose} colorScheme={colorScheme} language={language} />}
     </div>
   )

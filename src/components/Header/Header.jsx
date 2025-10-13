@@ -8,8 +8,8 @@ const Header = () => {
         Custom Coding <span className="main-header__accent">Color</span> Theme
       </h1>
       <p className="main-header__subtitle">
-        Design your own color themes for languages like CSS and HTML, <br />
-        see your changes in real time, and instantly generate matching VS Code settings.
+        Design your own color themes for CSS, HTML, and JavaScript, <br />
+        see changes in real time, and instantly generate matching VS Code settings!
       </p>
     </header>
   )

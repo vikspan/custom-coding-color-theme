@@ -3,6 +3,7 @@ import "./CodeBlock.scss";
 import Button from "../common/Button/Button";
 import CSSCode from "./CSSCode";
 import HTMLCode from "./HTMLCode";
+import JSCode from "./JSCode";
 
 const CodeBlock = ({ hasToggle = false, colorScheme, isDarkTheme = false, handleDark, language }) => {
 
@@ -20,6 +21,7 @@ const CodeBlock = ({ hasToggle = false, colorScheme, isDarkTheme = false, handle
       )}
       {language === "CSS" && <CSSCode colors={colors} />}
       {language === "HTML" && <HTMLCode colors={colors} />}
+      {language === "JS" && <JSCode colors={colors} />}
     </div>
   )
 }

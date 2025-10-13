@@ -59,6 +59,56 @@ const RulesBlockWithCopy = ({ colorScheme, language }) => {
     }
   ]
 }`;
+    } else if (language === "JS") {
+      return `"editor.tokenColorCustomizations": {
+  "textMateRules": [
+    {
+      "scope": [
+        "keyword",
+        "storage.type",
+        "storage.modifier"
+      ],
+      "settings": { "foreground": "${colors.keyword}" }
+    },
+    {
+      "scope": [
+        "variable",
+        "variable.other",
+        "variable.other.constant",
+        "entity.name.variable"
+      ],
+      "settings": { "foreground": "${colors.variable}" }
+    },
+    {
+      "scope": [
+        "entity.name.function",
+        "entity.name.function.js",
+        "support.function",
+        "support.function.builtin",
+        "meta.function-call",
+        "variable.function"
+      ],
+      "settings": { "foreground": "${colors.func}" }
+    },
+    {
+      "scope": [
+        "constant.numeric",
+        "constant.language.boolean",
+        "constant.language.null"
+      ],
+      "settings": { "foreground": "${colors.number}" }
+    },
+    {
+      "scope": [
+        "string",
+        "string.quoted",
+        "string.template",
+        "punctuation.definition.string"
+      ],
+      "settings": { "foreground": "${colors.string}" }
+    }
+  ]
+}`;
     } else {
       return "";
     }

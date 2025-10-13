@@ -1,11 +1,11 @@
 # Custom Coding Color Theme
 
-This is a simple React app built with Vite and Sass that lets you customize the color theme for languages like CSS and HTML.  
+This is a simple React app built with Vite and Sass that lets you customize the color theme for languages like CSS, HTML, and JavaScript.  
 Try out different syntax coloring, see how your code looks like in real time, and then generate matching VS Code color rules.
 
 ## Features
 
-- Live preview of CSS and HTML syntax highlighting with customizable colors 
+- Live preview of CSS, HTML, and JS syntax highlighting with customizable colors 
 - Generate VS Code-compatible token color rules for any saved theme
 - Built with React and Vite for fast development  
 - Ready for GitHub Pages deployment
@@ -24,7 +24,7 @@ Try out different syntax coloring, see how your code looks like in real time, an
 
 ## Usage
 
-1. Select a language (CSS or HTML).  
+1. Select a language (CSS, HTML, or JS).  
 2. Adjust the colors for different syntax constructs (selectors, properties, etc.).  
 3. See your changes update in real time.  
 4. Copy the generated VS Code rules and paste them into your `settings.json` to apply your theme.

@@ -7,17 +7,25 @@ import './styles/main.scss';
 function App() {
 
   const defaultCSSColorScheme = [
-    { construct: "typeSel", title: "Type Selector", color: "#da00b6" },
-    { construct: "classSel", title: "Class Selector", color: "#54d101" },
-    { construct: "property", title: "Property", color: "#005CC5" },
-    { construct: "value", title: "Value", color: "#ec3f79" }
+    { construct: "typeSel", title: "Type Selectors", color: "#da00b6" },
+    { construct: "classSel", title: "Class Selectors", color: "#54d101" },
+    { construct: "property", title: "Properties", color: "#005CC5" },
+    { construct: "value", title: "Values", color: "#ec3f79" }
   ];
   const defaultHTMLColorScheme = [
-    { construct: "htmlTag", title: "HTML Tag", color: "#da00b6" },
-    { construct: "attName", title: "Name of Attribute", color: "#005cc5" },
-    { construct: "attValue", title: "Value of Attribute", color: "#04c4d2" }
+    { construct: "htmlTag", title: "HTML Tags", color: "#da00b6" },
+    { construct: "attName", title: "Attribute Names", color: "#2079df" },
+    { construct: "attValue", title: "Attribute Values", color: "#04c4d2" }
   ];
-  const languageOptions = ["CSS", "HTML"];
+  const defaultJSColorScheme = [
+    { construct: "keyword", title: "Keywords", color: "#df62a5" },
+    { construct: "variable", title: "Variables", color: "#46c8e2" },
+    { construct: "func", title: "Functions", color: "#9987d9" },
+    { construct: "number", title: "Numbers", color: "#e17c51" },
+    { construct: "string", title: "Strings", color: "#a6c355" }
+  ];
+
+  const languageOptions = ["CSS", "HTML", "JS"];
   const [language, setLanguage] = useState("CSS");
   const [colorScheme, setColorScheme] = useState(defaultCSSColorScheme);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -45,6 +53,8 @@ function App() {
       setColorScheme(defaultCSSColorScheme);
     } else if (lang === "HTML") {
       setColorScheme(defaultHTMLColorScheme);
+    } else if (lang === "JS") {
+      setColorScheme(defaultJSColorScheme);
     }
   }
 
